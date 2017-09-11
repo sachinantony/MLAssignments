@@ -105,7 +105,7 @@ fprintf('Running Gradient Descent ...\n')
 X = [ones(m, 1), data(:,1)];
 
 % initialize the weight vector W 
-W = zeros(2, 1); 
+W = [0.5;0.1;] 
 
 % Set gradient descent settings: Note that in class, I actually used Matlab
 % symolic variables to calculate directly the solution of the optimization
@@ -114,16 +114,16 @@ W = zeros(2, 1);
 % Here we use a NUMERICAL method by recomputing the gradient 
 % We set some quantities necessary to do this
 
-iterations = 1500;
+iterations = 20;
 alpha = 0.01;
 
 % Compute and display initial cost
 % You MUST FILL IN THE NECESSARY CODE FOR THE FUNCTION computeCost
-computeCost(X, y, W)
+cost = computeCostB(X, y, W)
 
 % Next we need to run the function gradientDescent, whose code YOU MUST
 % COMPLETE.  It returns the solution for W
-W = gradientDescent(X, y, W, alpha, iterations);
+W = gradientDescentB(X, y, W, alpha, iterations);
 
 % print W to screen
 fprintf('W found by gradient descent: ');
@@ -169,7 +169,7 @@ J_vals = zeros(length(W0_vals), length(W1_vals));
 for i = 1:length(W0_vals)
     for j = 1:length(W1_vals)
 	  t = [W0_vals(i); W1_vals(j)];    
-	  J_vals(i,j) = computeCost(X, y, t);
+	  J_vals(i,j) = computeCostB(X, y, t);
     end
 end
 
@@ -194,6 +194,7 @@ xlabel('W_0'); ylabel('W_1');
 hold on;
 plot(W(1), W(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
 title('Contour')
+
 
 function plotData(x,y)
 plot(x,y,'*')
