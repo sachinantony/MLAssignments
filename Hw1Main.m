@@ -33,7 +33,6 @@ m = length(y); % number of training examples
 
 % Write the fhe function Plot Data, which  plots y against X
 
-plotData(X, y);
 
 %%==================== Linear Regression using symbolic variables =====
 % extend the data set by the bias column: 
@@ -105,7 +104,7 @@ fprintf('Running Gradient Descent ...\n')
 X = [ones(m, 1), data(:,1)];
 
 % initialize the weight vector W 
-W = [0.5;0.1;] 
+W = [0;0;] ;
 
 % Set gradient descent settings: Note that in class, I actually used Matlab
 % symolic variables to calculate directly the solution of the optimization
@@ -114,12 +113,12 @@ W = [0.5;0.1;]
 % Here we use a NUMERICAL method by recomputing the gradient 
 % We set some quantities necessary to do this
 
-iterations = 20;
+iterations = 1500;
 alpha = 0.01;
 
 % Compute and display initial cost
 % You MUST FILL IN THE NECESSARY CODE FOR THE FUNCTION computeCost
-cost = computeCostB(X, y, W)
+cost = computeCostB(X, y, W);
 
 % Next we need to run the function gradientDescent, whose code YOU MUST
 % COMPLETE.  It returns the solution for W
@@ -136,7 +135,7 @@ hold on; % keep previous plot visible
 % against the 2nd column.  Also, the hypothesis is X*W, where * is matrix
 % multiplication
 
-plot(X(:,2), X*W, '-'); 
+plot(X(:,2), X*W, 'g-'); 
 legend('Training data', 'Linear regression')
 hold off   % I this moment, release the figure, so no other plots are made on it
 
