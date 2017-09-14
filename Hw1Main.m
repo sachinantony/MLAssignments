@@ -58,10 +58,10 @@ for l=1:m, hX(l) = eX(l,:)*w; end
 Jw = sum((hX - y').^2); % dot notation means elementwise operation for vectors
 
 % use matlab function 'gradient' 
-grad=gradient(Jw)
+grad=gradient(Jw);
 
 %Inspect S
-size(grad)
+size(grad);
 
 % Use Matlab function 'solve' to solve the equationa obtained by setting 
 % gradient = 0 
@@ -72,7 +72,7 @@ w0
 w1
 
 % Now plug the solutions into hX: use Matlab function 'eval'
-eval(hX)
+eval(hX);
 
 %% PLOT RESULTS
 %   1) Plot the data: (X, y)
@@ -95,7 +95,7 @@ plot(X, eval(hX), 'ro');
 
 % 3)
 plot(X', eval(hX), 'r-');
-title('Linear regression using symbolic variables');
+title('Linear regression using symbolic variables vs gradient descent');
 
 %% =================== Part 2: Gradient descent ===================
 fprintf('Running Gradient Descent ...\n')
@@ -135,8 +135,8 @@ hold on; % keep previous plot visible
 % against the 2nd column.  Also, the hypothesis is X*W, where * is matrix
 % multiplication
 
+plot(X(:,2), X*W, 'go'); 
 plot(X(:,2), X*W, 'g-'); 
-legend('Training data', 'Linear regression')
 hold off   % I this moment, release the figure, so no other plots are made on it
 
 %% Now we use the model to make predictions
