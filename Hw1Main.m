@@ -31,9 +31,6 @@ y = data(:, 2); % 2nd column of data
 
 m = length(y); % number of training examples
 
-% Write the fhe function Plot Data, which  plots y against X
-
-
 %%==================== Linear Regression using symbolic variables =====
 % extend the data set by the bias column: 
 eX = [ones(m,1) X];

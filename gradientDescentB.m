@@ -11,7 +11,6 @@ J_history = zeros(num_iters, 1); % declare J_history and initialize to 0
 
 for iter = 1:num_iters
 
-% ====================== YOUR CODE HERE ======================
 % Perform a single gradient step on the parameter vector W
    h = X*W ;
  error = h - y; % m x 1 vector: unsquared difference hypothesis - y

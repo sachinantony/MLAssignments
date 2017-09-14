@@ -13,10 +13,6 @@ hX=zeros(m,1);
 % You need to return the following variables correctly 
 J = 0;
 
-% ====================== INCLUDE YOUR CODE HERE ======================
-% Instructions: Compute the cost of a particular choice of W
-%               You should set J to the cost.
-
 %hX= ......% evaluate the hypothesis
 prediction = X*W;
 sqrError = (prediction - y).^2;
