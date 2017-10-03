@@ -7,7 +7,9 @@
 %     
 %
 
-
+clear all;
+clear;
+clc;
 %% Initialization
 clear ; close all; clc
 
