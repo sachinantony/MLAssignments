@@ -124,8 +124,8 @@ for i = 1:100
     tstSetX = currentX(halfSize:end,:);
     tstSetY = currentY(halfSize:end,:);
     currentW = gradientDescentB(trSetX,trSetY,W,alpha,iterations);
-    modelingError = [modelingError,computeCost2(trSetX,trSetY,currentW,lambdaVal)];
-    genError = [genError,computeCost2(tstSetX,tstSetY,currentW,lambdaVal)];
+    modelingError = [modelingError,computeCostB(trSetX,trSetY,currentW)];
+    genError = [genError,computeCostB(tstSetX,tstSetY,currentW)];
 end
 figure
 plot(iList,modelingError);
