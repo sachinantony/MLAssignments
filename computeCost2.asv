@@ -17,11 +17,10 @@ J = 0;
 %hX= ......% evaluate the hypothesis
 prediction = X*W;
 sqrError = (prediction - y).^2;
-J = sum(sqrError);
+J = 1/(2*m) * sum(sqrError);
 W=W.^2;
 WSum = sum(W);
-J=J+(lambda*WSum);
-J=J/(2*m);
+J=J+(lambda*WSum)
 
 %J = ......% evaluate the cost : the mean of the square errors 
           % between the true output, y the output generate by the hypothesis
