@@ -159,3 +159,5 @@ yi=interp1(eX(:,3), eX*currentW,xi,'spline');
 plot(xi,yi)
 hold off;
 
+
+
