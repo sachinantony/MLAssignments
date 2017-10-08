@@ -38,7 +38,7 @@ WList = WList';
 
 %----------------------------------Get lambda-------------------
 costList = [];
-minCost = computeCost2(trDataX, trDataY,WList(1,:)',lambda(1))
+minCost = computeCost2(trDataX, trDataY,WList(1,:)',lambda(1));
 for i = 1:length(lambda)
     costList = [costList, computeCost2(trDataX, trDataY,WList(i,:)',lambda(i))];
 end
