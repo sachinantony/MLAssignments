@@ -130,7 +130,7 @@ classdef ID3<handle
             
             %----------------------------------------------------------
             %#fill_in: calculate entropy
-            Entropy = PositivePart + NegativePart;
+            Entropy = (PositivePart + NegativePart)*(-1);
             %----------------------------------------------------------
         end
         
@@ -163,7 +163,7 @@ classdef ID3<handle
             
             %----------------------------------------------------------
             %#fill_in: calculate the information gain (using the value of entropy and the function obj.SumForInfoGain)
-            InfoGain = entropy + SumForInfoGain(obj, Data, Attribute)
+            InfoGain = entropy + SumForInfoGain(obj, Data, Attribute);
             %----------------------------------------------------------
         end
     end
