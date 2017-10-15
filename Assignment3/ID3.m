@@ -103,7 +103,7 @@ classdef ID3<handle
         function Entropy = CalculateEntropy(~, P_ve, All)
             %----------------------------------------------------------
             %#fill_in: calculate positive samples proportion
-            P_ratio = P_ve/All
+            P_ratio = P_ve/All;
             %#fill_in: calculate negative samples proportion
             N_ratio = 1-P_ratio;
             %----------------------------------------------------------
@@ -130,7 +130,7 @@ classdef ID3<handle
             
             %----------------------------------------------------------
             %#fill_in: calculate entropy
-            Entropy = (PositivePart + NegativePart)*(-1);
+            Entropy = PositivePart + NegativePart;
             %----------------------------------------------------------
         end
         
@@ -163,7 +163,7 @@ classdef ID3<handle
             
             %----------------------------------------------------------
             %#fill_in: calculate the information gain (using the value of entropy and the function obj.SumForInfoGain)
-            InfoGain = entropy + SumForInfoGain(obj, Data, Attribute);
+            InfoGain = entropy - SumForInfoGain(obj, Data, Attribute);
             %----------------------------------------------------------
         end
     end
