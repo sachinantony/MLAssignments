@@ -105,7 +105,7 @@ classdef ID3<handle
             %#fill_in: calculate positive samples proportion
             P_ratio = P_ve/All
             %#fill_in: calculate negative samples proportion
-            N_ratio = (1-P_ve)/All
+            N_ratio = 1-P_ratio;
             %----------------------------------------------------------
             
             %----------------------------------------------------------
