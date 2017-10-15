@@ -143,7 +143,7 @@ NBCPlotHandle = plot(5:5:20, AccuraciesNBC(:, MIN_ACCURACY), '--ro', ...
 title('NBC Min/Max/Avg accuracies at different bin numbers (10 runs)');
 legend({'min accuracy', 'max accuracy', 'avg accuracy'}, ...
         'Position', [0.84, 0.65, 0, 0]);
-ylim([20 100]);
+ylim([60 105]);
 ylabel('Accuracy');
 xlabel('Bin number');
 
