@@ -159,7 +159,7 @@ classdef ID3<handle
             %total number
             SizeAll = size(Data, 1);
             %calculate entropy
-            entropy = obj.CalculateEntropy(Num_P_ve, SizeAll);
+            entropy = obj.CalculateEntropy(Num_P_ve, SizeAll)
             
             %----------------------------------------------------------
             %#fill_in: calculate the information gain (using the value of entropy and the function obj.SumForInfoGain)
