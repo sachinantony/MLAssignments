@@ -18,20 +18,17 @@ merged_data = horzcat(meas, numerical_species);
 clear meas;                 %delete meas
 clear species;              %delete species
 clear numerical_species;    %delete numerical_species
-
-
-n = 50; 
-rand ( 'seed' ,2) ; 
-Xi = 6* rand (n ,2) ;
-q = 0;
-Xi = [Xi, 4* rand(n,q) ];
-[n,p] = size (Xi) ;
-bt = -6; 
-wt = [4 ; -1]; 
-yi = sign (wt (1) * Xi (: ,1) + wt (2) * Xi (: ,2) + bt); 
+rowSize = length(merged_data(1,:));
+Xi = merged_data(:,1:rowSize - 1) 
+yi = merged_data(:,rowSize) 
 len = length(yi);
 alpha=randperm(len-1);
 alpha = alpha';
 prdctSum = sum(yi(1:len-1).*alpha);
 alpha(len)=(-prdctSum)/yi(len);
+w=[];
+for i = 1:rowSize-1
+    w=[w,alpha.*yi.*Xi(:,i)];
+end
+    
 
