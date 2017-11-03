@@ -31,5 +31,6 @@ w=[];
 for i = 1:rowSize-1
     w=[w,alpha.*yi.*Xi(:,i)];
 end
+w = sum(w)
     
 
