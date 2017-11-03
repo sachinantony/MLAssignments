@@ -19,13 +19,14 @@ clear meas;                 %delete meas
 clear species;              %delete species
 clear numerical_species;    %delete numerical_species
 rowSize = length(merged_data(1,:));
-Xi = merged_data(:,1:rowSize - 1) 
-yi = merged_data(:,rowSize) 
+Xi = merged_data(:,1:rowSize - 1);
+yi = merged_data(:,rowSize) ;
 len = length(yi);
-alpha=randperm(len-1);
+alpha=rand(1,len-1);
 alpha = alpha';
 prdctSum = sum(yi(1:len-1).*alpha);
 alpha(len)=(-prdctSum)/yi(len);
+b = 0;
 w=[];
 for i = 1:rowSize-1
     w=[w,alpha.*yi.*Xi(:,i)];
